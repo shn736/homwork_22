@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
+
 def home(request):
-    return render(request, 'home.html')
+    """Контроллер рендерит шаблон главной страницы функцией"""
+    return render(request, '../templates/catalogs/home.html')
 
 
 def contacts(request):
-    return render(request, 'contacts.html')
+    """Контроллер рендерит шаблон страницы контактов функцией"""
+    return render(request, '../templates/catalogs/contacts.html')
