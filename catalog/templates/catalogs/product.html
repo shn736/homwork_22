@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <p class="card-text">Наименование: {{ product.name }}</p>
                         <p class="card-text">Категория: {{ product.category }}</p>
-                        <p class="card-text">Описание: {{ product.description }}</p>
+                        <p class="card-text">Описание: {{ product.description |truncatechars:100 }}</p>
                         <p class="card-text">Цена: {{ product.price }}</p>
                         <p class="card-text">Дата добавления: {{ product.created_at }}</p>
                         <p class="card-text">Дата обновления: {{ product.updated_at }}</p>
