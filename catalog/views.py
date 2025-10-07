@@ -20,6 +20,8 @@ class ProductListView(ListView):
 
 class ProductDetailView(DetailView):
     model = Product
+
+
 # def product(request, pk):
 #     product = get_object_or_404(Product, pk=pk)
 #     context = {"product": product}
