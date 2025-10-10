@@ -1,0 +1,22 @@
+{% extends 'blogs/base.html' %}
+{% load my_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="auto">
+<head>
+    <title>Детали объекта Blogs</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">{{ blogs.header }}</h1>
+        <p>{{ blogs.content }}</p>
+        <p>{{ blogs.preview }}</p>
+        <p>Создано: {{ blogs.created_at }}</p>
+        <p>Число просмотров: {{ blogs.number_of_views }}</p>
+        <a href="{% url 'blogs:blogs_list' %}" class="btn btn-primary">Вернуться к списку</a>
+    </div>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}
