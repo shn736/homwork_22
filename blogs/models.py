@@ -1,9 +1,9 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Blogs(models.Model):
-    header = models.CharField(
-        max_length=150,
+    header = models.TextField(
         verbose_name="Заголовок",
         help_text="Введите наименование заголовка",
     )
@@ -20,14 +20,12 @@ class Blogs(models.Model):
     )
 
     created_at = models.DateTimeField(
-        auto_now_add=True,
-        blank=True,
-        null=True,
+        default=timezone.now,
         verbose_name="Дата создания",
         help_text="Введите дату создания",
     )
 
-    publication_attribute = models.BooleanField(default=False)
+    is_published = models.BooleanField(default=False)
 
     number_of_views = models.PositiveIntegerField(
         verbose_name="Число просмотров", help_text="Введите число просмотров", default=0
