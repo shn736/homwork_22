@@ -3,12 +3,13 @@ from django.utils import timezone
 
 
 class Blogs(models.Model):
-    header = models.TextField(
+    header = models.CharField(
+        max_length=150,
         verbose_name="Заголовок",
         help_text="Введите наименование заголовка",
     )
-    content = models.CharField(
-        max_length=150, verbose_name="Содержимое", help_text="Введите содержимое"
+    content = models. TextField(
+         verbose_name="Содержимое", help_text="Введите содержимое"
     )
 
     preview = models.ImageField(
@@ -20,9 +21,8 @@ class Blogs(models.Model):
     )
 
     created_at = models.DateTimeField(
-        default=timezone.now,
-        verbose_name="Дата создания",
-        help_text="Введите дату создания",
+        "Дата создания",
+        auto_now_add=True
     )
 
     is_published = models.BooleanField(default=False)
