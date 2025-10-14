@@ -8,8 +8,8 @@ class Blogs(models.Model):
         verbose_name="Заголовок",
         help_text="Введите наименование заголовка",
     )
-    content = models. TextField(
-         verbose_name="Содержимое", help_text="Введите содержимое"
+    content = models.TextField(
+        verbose_name="Содержимое", help_text="Введите содержимое"
     )
 
     preview = models.ImageField(
@@ -20,10 +20,7 @@ class Blogs(models.Model):
         help_text="Загрузите превью",
     )
 
-    created_at = models.DateTimeField(
-        "Дата создания",
-        auto_now_add=True
-    )
+    created_at = models.DateTimeField("Дата создания", auto_now_add=True)
 
     is_published = models.BooleanField(default=False)
 

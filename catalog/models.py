@@ -17,10 +17,12 @@ class Product(models.Model):
     name = models.CharField(
         max_length=150,
         verbose_name="Наименование",
-        help_text="Введите наименование продукта",
+        help_text="Введите наименование",
     )
     description = models.CharField(
-        max_length=150, verbose_name="Описание", help_text="Введите описание продукта"
+        max_length=150,
+        verbose_name="Описание",
+        help_text="Введите описание",
     )
     image = models.ImageField(
         upload_to="product/image",
@@ -40,7 +42,7 @@ class Product(models.Model):
     )
     price = models.IntegerField(
         verbose_name="Цена за покупку",
-        help_text="Введите цену за покупку",
+        help_text="Введите цену",
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
