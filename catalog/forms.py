@@ -29,7 +29,7 @@ class StyleFormMixin:
 class ProductForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Product
-        fields = "__all__"
+        exclude = ("owner",)
 
     def clean_name(self):
         cleaned_data = super().clean()
@@ -62,3 +62,9 @@ class ProductForm(StyleFormMixin, ModelForm):
         if price <= 0:
             raise ValidationError("Цена не может быть нулевой или отрицательной")
         return price
+
+
+class ProductModeratorForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Product
+        fields = ('is_published',)
