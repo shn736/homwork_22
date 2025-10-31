@@ -1,0 +1,19 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<body>
+    <h1>Продукты в категории:</h1>
+    <ul>
+        {% for product in object_list %}
+            <li>
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>Цена: {{ product.price }} руб.</p>
+            </li>
+        {% empty %}
+            <li>Нет продуктов в этой категории</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'products:products_list' %}">Назад к списку продуктов</a>
+</body>
+{% endblock %}
