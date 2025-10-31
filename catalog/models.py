@@ -71,16 +71,14 @@ class Product(models.Model):
         help_text="Укажите владельца товара",
         blank=True,
         null=True,
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
     )
 
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["category"]
-        permissions = [
-            ("can_unpublish_product", "can unpublish product")
-        ]
+        permissions = [("can_unpublish_product", "can unpublish product")]
 
     def __str__(self):
         return self.name
